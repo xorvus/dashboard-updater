@@ -44,6 +44,10 @@ clean:
 	@echo "Cleaning..."
 	@rm -f main
 
+# Swagger
+swag:
+	@swag init -g ./internal/server/routes.go
+
 # Live Reload
 watch:
 	@if command -v air > /dev/null; then \
