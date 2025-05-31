@@ -9,6 +9,5 @@
     "@semantic-release/git",
     "@semantic-release/github"
   ],
-  "prepareCmd": "echo '${nextRelease.version}' > version.txt",
-  "repositoryUrl": "https://github.com/xorvus/dashboard-updater"
+  "prepareCmd": "echo '${nextRelease.version}' > version.txt"
 }
