@@ -28,7 +28,17 @@ const docTemplate = `{
                     "health"
                 ],
                 "summary": "Check Health",
-                "responses": {}
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
             }
         }
     }

@@ -16,19 +16,20 @@ import (
 // @Produce      json
 // @Tags         health
 // @Router       /health [get]
+// @Success 200 {object} map[string]string
 func (s *FiberServer) RegisterFiberRoutes() {
 	// Apply CORS middleware
 	s.App.Use(cors.New(cors.Config{
 		AllowOrigins:     "*",
 		AllowMethods:     "GET,POST,PUT,DELETE,OPTIONS,PATCH",
 		AllowHeaders:     "Accept,Authorization,Content-Type",
-		AllowCredentials: false, // credentials require explicit origins
+		AllowCredentials: false,
 		MaxAge:           300,
 	}))
 
 	basicAuthMiddleware := basicauth.New(basicauth.Config{
 		Users: map[string]string{
-			os.Getenv("DOCS_USER"): os.Getenv("DOCS_PASS"), // ganti sesuai kebutuhan
+			os.Getenv("DOCS_USER"): os.Getenv("DOCS_PASS"),
 		},
 	})
 

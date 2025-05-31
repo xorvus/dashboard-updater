@@ -8,7 +8,13 @@ paths:
       description: Check Health
       produces:
       - application/json
-      responses: {}
+      responses:
+        "200":
+          description: OK
+          schema:
+            additionalProperties:
+              type: string
+            type: object
       summary: Check Health
       tags:
       - health
